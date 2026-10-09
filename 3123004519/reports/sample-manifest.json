@@ -1,0 +1,36 @@
+{
+  "source": "用户提供的课堂测试文本.zip",
+  "archive_sha256": "c76d6751049f0fa96e4660a08459d7a7ebc2a2783b310ccea3beecf52047648c",
+  "files": {
+    "orig.txt": {
+      "bytes": 29571,
+      "sha256": "caef45274b629e1423a6274e56dd31fc386fff3a7480f5852f975d22962a7926",
+      "source_page_wrapped": false
+    },
+    "orig_0.8_add.txt": {
+      "bytes": 34860,
+      "sha256": "821ea90ccaf50dc431945ee28bf77023ae126f284cdea8e086ade48f15189c57",
+      "source_page_wrapped": false
+    },
+    "orig_0.8_del.txt": {
+      "bytes": 162929,
+      "sha256": "c0778c6be5a02c941b085f976dcee2421c2c6eba2b92fd4445ffe9da3fb0ffb0",
+      "source_page_wrapped": true
+    },
+    "orig_0.8_dis_1.txt": {
+      "bytes": 168169,
+      "sha256": "81b6bca2766ccebf08becf9baf2f5dfefd121e5720187dbc6aae46ab7df0731d",
+      "source_page_wrapped": true
+    },
+    "orig_0.8_dis_10.txt": {
+      "bytes": 168169,
+      "sha256": "5290b72f580e25a26b4d7a4ce8b3cb913ad95054d397185a535b2d998043d3fa",
+      "source_page_wrapped": true
+    },
+    "orig_0.8_dis_15.txt": {
+      "bytes": 168136,
+      "sha256": "275c5c15332b7d91b98056feb2bd8ae0267897945f75f2f0cff600726cc9ad38",
+      "source_page_wrapped": true
+    }
+  }
+}
