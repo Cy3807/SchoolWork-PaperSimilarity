@@ -1,0 +1,263 @@
+{
+  "environment": {
+    "python": "3.9.6",
+    "system": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "method": "5 alternating runs; median elapsed; separate tracemalloc peak",
+  "synthetic": [
+    {
+      "characters_each": 1000,
+      "before": {
+        "median_ms": 0.5112919999999965,
+        "samples_ms": [
+          0.5913750000000051,
+          0.5224160000000047,
+          0.5112919999999965,
+          0.4996249999999966,
+          0.4938750000000047
+        ],
+        "python_peak_mib": 0.3800506591796875
+      },
+      "after": {
+        "median_ms": 0.35824999999999746,
+        "samples_ms": [
+          0.3598340000000033,
+          0.35824999999999746,
+          0.3579999999999972,
+          0.3777920000000018,
+          0.353375000000003
+        ],
+        "python_peak_mib": 0.22360992431640625
+      }
+    },
+    {
+      "characters_each": 10000,
+      "before": {
+        "median_ms": 5.96975000000001,
+        "samples_ms": [
+          6.582916999999994,
+          6.220666999999999,
+          5.939749999999994,
+          5.96975000000001,
+          5.836750000000002
+        ],
+        "python_peak_mib": 4.585395812988281
+      },
+      "after": {
+        "median_ms": 3.968666999999995,
+        "samples_ms": [
+          4.1233749999999985,
+          3.968666999999995,
+          3.939790999999998,
+          3.8280420000000035,
+          3.9843749999999845
+        ],
+        "python_peak_mib": 2.085205078125
+      }
+    },
+    {
+      "characters_each": 100000,
+      "before": {
+        "median_ms": 78.12916699999994,
+        "samples_ms": [
+          76.92858400000003,
+          79.45629200000003,
+          78.12916699999994,
+          83.10029200000002,
+          77.90866699999998
+        ],
+        "python_peak_mib": 44.74497985839844
+      },
+      "after": {
+        "median_ms": 45.153458000000036,
+        "samples_ms": [
+          45.77287499999999,
+          44.62316699999997,
+          45.153458000000036,
+          45.354999999999926,
+          43.14774999999993
+        ],
+        "python_peak_mib": 26.563709259033203
+      }
+    }
+  ],
+  "official_wrapped_pair": {
+    "before": {
+      "median_ms": 15.29604200000012,
+      "samples_ms": [
+        14.917583000000123,
+        15.29604200000012,
+        15.385791000000149,
+        15.436875000000017,
+        14.837041999999911
+      ],
+      "python_peak_mib": 3.011028289794922
+    },
+    "after": {
+      "median_ms": 11.449041999999965,
+      "samples_ms": [
+        11.131167000000053,
+        11.624791999999884,
+        11.449041999999965,
+        11.58266699999988,
+        11.177624999999969
+      ],
+      "python_peak_mib": 2.0026283264160156
+    }
+  },
+  "official_cli": [
+    {
+      "file": "orig.txt",
+      "answer": "1.00",
+      "elapsed_ms": 30.476665999999987,
+      "sha256": "caef45274b629e1423a6274e56dd31fc386fff3a7480f5852f975d22962a7926"
+    },
+    {
+      "file": "orig_0.8_add.txt",
+      "answer": "0.90",
+      "elapsed_ms": 31.352499999999893,
+      "sha256": "821ea90ccaf50dc431945ee28bf77023ae126f284cdea8e086ade48f15189c57"
+    },
+    {
+      "file": "orig_0.8_del.txt",
+      "answer": "0.90",
+      "elapsed_ms": 38.12300000000013,
+      "sha256": "c0778c6be5a02c941b085f976dcee2421c2c6eba2b92fd4445ffe9da3fb0ffb0"
+    },
+    {
+      "file": "orig_0.8_dis_1.txt",
+      "answer": "0.97",
+      "elapsed_ms": 37.98741699999986,
+      "sha256": "81b6bca2766ccebf08becf9baf2f5dfefd121e5720187dbc6aae46ab7df0731d"
+    },
+    {
+      "file": "orig_0.8_dis_10.txt",
+      "answer": "0.91",
+      "elapsed_ms": 38.98029100000011,
+      "sha256": "5290b72f580e25a26b4d7a4ce8b3cb913ad95054d397185a535b2d998043d3fa"
+    },
+    {
+      "file": "orig_0.8_dis_15.txt",
+      "answer": "0.75",
+      "elapsed_ms": 38.54254199999985,
+      "sha256": "275c5c15332b7d91b98056feb2bd8ae0267897945f75f2f0cff600726cc9ad38"
+    }
+  ],
+  "profile": [
+    {
+      "function": "service.py:9 compare_files",
+      "self_ms": 0.0060420000000000005,
+      "cumulative_ms": 20.055708000000003,
+      "calls": 1
+    },
+    {
+      "function": "text_io.py:81 read_paper",
+      "self_ms": 0.010001000000000001,
+      "cumulative_ms": 12.465750000000002,
+      "calls": 2
+    },
+    {
+      "function": "text_io.py:56 unwrap_source_page",
+      "self_ms": 0.8939180000000001,
+      "cumulative_ms": 12.306042000000001,
+      "calls": 2
+    },
+    {
+      "function": "similarity.py:34 similarity",
+      "self_ms": 0.059041,
+      "cumulative_ms": 7.1276660000000005,
+      "calls": 1
+    },
+    {
+      "function": "similarity.py:10 normalize",
+      "self_ms": 0.011751000000000001,
+      "cumulative_ms": 3.6027090000000004,
+      "calls": 2
+    },
+    {
+      "function": "similarity.py:18 count_features",
+      "self_ms": 0.029876000000000003,
+      "cumulative_ms": 2.1372920000000004,
+      "calls": 2
+    },
+    {
+      "function": "similarity.py:12 <genexpr>",
+      "self_ms": 1.251567,
+      "cumulative_ms": 1.65348,
+      "calls": 15330
+    },
+    {
+      "function": "similarity.py:22 cosine",
+      "self_ms": 0.022080000000000002,
+      "cumulative_ms": 1.326208,
+      "calls": 1
+    },
+    {
+      "function": "similarity.py:19 <genexpr>",
+      "self_ms": 1.112942,
+      "cumulative_ms": 1.112942,
+      "calls": 15328
+    },
+    {
+      "function": "similarity.py:30 <genexpr>",
+      "self_ms": 0.387643,
+      "cumulative_ms": 0.572882,
+      "calls": 5080
+    },
+    {
+      "function": "text_io.py:24 handle_starttag",
+      "self_ms": 0.370301,
+      "cumulative_ms": 0.501266,
+      "calls": 988
+    },
+    {
+      "function": "text_io.py:100 write_answer",
+      "self_ms": 0.007541,
+      "cumulative_ms": 0.255333,
+      "calls": 1
+    },
+    {
+      "function": "text_io.py:89 validate_output",
+      "self_ms": 0.006998000000000001,
+      "cumulative_ms": 0.200917,
+      "calls": 1
+    },
+    {
+      "function": "text_io.py:35 handle_endtag",
+      "self_ms": 0.142683,
+      "cumulative_ms": 0.17007300000000003,
+      "calls": 988
+    },
+    {
+      "function": "similarity.py:23 <genexpr>",
+      "self_ms": 0.16052200000000003,
+      "cumulative_ms": 0.16052200000000003,
+      "calls": 5564
+    },
+    {
+      "function": "similarity.py:24 <genexpr>",
+      "self_ms": 0.145976,
+      "cumulative_ms": 0.145976,
+      "calls": 5080
+    },
+    {
+      "function": "text_io.py:31 handle_data",
+      "self_ms": 0.124986,
+      "cumulative_ms": 0.13827,
+      "calls": 1646
+    },
+    {
+      "function": "text_io.py:41 decode_text",
+      "self_ms": 0.0020000000000000005,
+      "cumulative_ms": 0.081041,
+      "calls": 2
+    },
+    {
+      "function": "text_io.py:18 __init__",
+      "self_ms": 0.008667,
+      "cumulative_ms": 0.013375000000000001,
+      "calls": 1
+    }
+  ]
+}

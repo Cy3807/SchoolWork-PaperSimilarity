@@ -1,0 +1,50 @@
+test_assignment_example (test_papercheck.CalculationTests) ... ok
+test_casefold_and_combining_characters (test_papercheck.CalculationTests) ... ok
+test_completely_different (test_papercheck.CalculationTests) ... ok
+test_cosine_empty_vectors (test_papercheck.CalculationTests) ... ok
+test_cosine_known_frequencies (test_papercheck.CalculationTests) ... ok
+test_cosine_smaller_vector_either_side (test_papercheck.CalculationTests) ... ok
+test_deletion (test_papercheck.CalculationTests) ... ok
+test_empty_text_rejected (test_papercheck.CalculationTests) ... ok
+test_feature_frequencies (test_papercheck.CalculationTests) ... ok
+test_identical_text (test_papercheck.CalculationTests) ... ok
+test_known_bigram_result (test_papercheck.CalculationTests) ... ok
+test_normalization_equivalence (test_papercheck.CalculationTests) ... ok
+test_single_character_fallback (test_papercheck.CalculationTests) ... ok
+test_single_character_identical (test_papercheck.CalculationTests) ... ok
+test_symmetry_and_bounds_multiple_inputs (test_papercheck.CalculationTests) ... ok
+test_ascii_environment_error_message (test_papercheck.CommandLineTests) ... ok
+test_cli_absolute_paths_with_spaces (test_papercheck.CommandLineTests) ... ok
+test_cli_missing_arguments (test_papercheck.CommandLineTests) ... ok
+test_cli_missing_file (test_papercheck.CommandLineTests) ... ok
+test_main_directly_success_and_failures (test_papercheck.CommandLineTests) ... ok
+test_no_extra_runtime_files_or_caches (test_papercheck.CommandLineTests) ... ok
+test_script_entrypoint (test_papercheck.CommandLineTests) ... ok
+test_gb18030 (test_papercheck.DecodingTests) ... ok
+test_incomplete_code_cell (test_papercheck.DecodingTests) ... ok
+test_incomplete_utf16 (test_papercheck.DecodingTests) ... ok
+test_invalid_encoding (test_papercheck.DecodingTests) ... ok
+test_legacy_source_page (test_papercheck.DecodingTests) ... ok
+test_missing_webpage_body (test_papercheck.DecodingTests) ... ok
+test_modern_source_page (test_papercheck.DecodingTests) ... ok
+test_parser_ignores_noncode_cells (test_papercheck.DecodingTests) ... ok
+test_plain_text_not_treated_as_html (test_papercheck.DecodingTests) ... ok
+test_utf16_bom (test_papercheck.DecodingTests) ... ok
+test_utf8_bom (test_papercheck.DecodingTests) ... ok
+test_compare_files_and_two_decimal_answer (test_papercheck.FileTests) ... ok
+test_directory_input (test_papercheck.FileTests) ... ok
+test_directory_output (test_papercheck.FileTests) ... ok
+test_existing_answer_can_be_updated (test_papercheck.FileTests) ... ok
+test_hardlink_alias_rejected (test_papercheck.FileTests) ... ok
+test_input_overwrite_rejected (test_papercheck.FileTests) ... ok
+test_invalid_input_preserves_answer (test_papercheck.FileTests) ... ok
+test_missing_input (test_papercheck.FileTests) ... ok
+test_missing_output_directory (test_papercheck.FileTests) ... ok
+test_path_validation_error (test_papercheck.FileTests) ... ok
+test_unreadable_input (test_papercheck.FileTests) ... ok
+test_unwritable_output (test_papercheck.FileTests) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 0.159s
+
+OK

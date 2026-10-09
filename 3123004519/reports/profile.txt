@@ -1,0 +1,28 @@
+         123321 function calls (123319 primitive calls) in 0.020 seconds
+
+   Ordered by: cumulative time
+   List reduced from 106 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.020    0.020 service.py:9(compare_files)
+        2    0.000    0.000    0.012    0.006 text_io.py:81(read_paper)
+        2    0.001    0.000    0.012    0.006 text_io.py:56(unwrap_source_page)
+        1    0.000    0.000    0.011    0.011 parser.py:103(feed)
+        1    0.002    0.002    0.011    0.011 parser.py:133(goahead)
+        1    0.000    0.000    0.007    0.007 similarity.py:34(similarity)
+      988    0.002    0.000    0.005    0.000 parser.py:300(parse_starttag)
+        2    0.000    0.000    0.004    0.002 similarity.py:10(normalize)
+      339    0.001    0.000    0.002    0.000 {method 'join' of 'str' objects}
+        2    0.000    0.000    0.002    0.001 similarity.py:18(count_features)
+        2    0.000    0.000    0.002    0.001 __init__.py:581(__init__)
+        2    0.000    0.000    0.002    0.001 __init__.py:649(update)
+        2    0.001    0.000    0.002    0.001 {built-in method _collections._count_elements}
+     7575    0.002    0.000    0.002    0.000 {method 'match' of 're.Pattern' objects}
+    15330    0.001    0.000    0.002    0.000 similarity.py:12(<genexpr>)
+      988    0.001    0.000    0.001    0.000 parser.py:385(parse_endtag)
+     3952    0.001    0.000    0.001    0.000 _markupbase.py:48(updatepos)
+        1    0.000    0.000    0.001    0.001 similarity.py:22(cosine)
+        3    0.000    0.000    0.001    0.000 {built-in method builtins.sum}
+        2    0.001    0.001    0.001    0.001 {built-in method unicodedata.normalize}
+
+

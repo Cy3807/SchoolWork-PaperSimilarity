@@ -7,6 +7,10 @@ from pathlib import Path
 
 from .errors import InputFileError, OutputFileError, TextEncodingError
 
+CODE_CELL_START = re.compile(
+    r"""<td\b[^>]*\bclass=["'][^"']*\bblob-code\b[^"']*["'][^>]*>""", re.IGNORECASE
+)
+
 
 class SourcePageParser(HTMLParser):
     """从旧版 GitHub 源码网页的 blob-code 单元格提取正文。"""
@@ -18,7 +22,7 @@ class SourcePageParser(HTMLParser):
         self.capturing = False
 
     def handle_starttag(self, tag, attrs):
-        if tag == "td" and "blob-code" in dict(attrs).get("class", "").split():
+        if tag == "td" and "blob-code" in (dict(attrs).get("class") or "").lower().split():
             self.capturing = True
             self.current = []
         elif tag == "br" and self.capturing:
@@ -53,9 +57,14 @@ def unwrap_source_page(text: str) -> str:
     beginning = text.lstrip()[:100].lower()
     if not (beginning.startswith("<!doctype html") or beginning.startswith("<html")):
         return text
-    parser = SourcePageParser()
-    parser.feed(text)
-    if parser.lines:
+    cells = list(CODE_CELL_START.finditer(text))
+    if cells:
+        end = text.lower().find("</td>", cells[-1].end())
+        if end < 0:
+            raise InputFileError("源码网页的正文单元格不完整")
+        parser = SourcePageParser()
+        # 剖析发现大部分时间在解析网页导航；这里只送入正文区域。
+        parser.feed(text[cells[0].start() : end + len("</td>")])
         return "\n".join(parser.lines)
     # 同时兼容新版源码网页嵌入的 JSON，不运行任何网页脚本。
     marker = re.search(r'"rawLines"\s*:', text)

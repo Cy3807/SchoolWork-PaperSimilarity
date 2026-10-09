@@ -1,4 +1,4 @@
-"""首版：字符二元片段词频与余弦相似度。"""
+"""字符二元片段词频与余弦相似度，保留稀疏频数。"""
 
 import math
 import unicodedata
@@ -16,18 +16,19 @@ def normalize(text: str) -> str:
 
 
 def count_features(text: str, width: int) -> Counter:
-    features = [text[index : index + width] for index in range(len(text) - width + 1)]
-    return Counter(features)
+    return Counter(text[index : index + width] for index in range(len(text) - width + 1))
 
 
 def cosine(left: Counter, right: Counter) -> float:
-    keys = set(left) | set(right)
-    vector_left = [left.get(key, 0) for key in keys]
-    vector_right = [right.get(key, 0) for key in keys]
-    dot = sum(a * b for a, b in zip(vector_left, vector_right))
-    norm_left = math.sqrt(sum(value * value for value in vector_left))
-    norm_right = math.sqrt(sum(value * value for value in vector_right))
-    return min(1.0, max(0.0, dot / (norm_left * norm_right)))
+    norm_left = math.sqrt(sum(value * value for value in left.values()))
+    norm_right = math.sqrt(sum(value * value for value in right.values()))
+    denominator = norm_left * norm_right
+    if denominator == 0:
+        raise EmptyTextError("特征向量不能为空")
+    if len(left) > len(right):
+        left, right = right, left
+    dot = sum(value * right.get(key, 0) for key, value in left.items())
+    return min(1.0, max(0.0, dot / denominator))
 
 
 def similarity(original: str, candidate: str) -> float:

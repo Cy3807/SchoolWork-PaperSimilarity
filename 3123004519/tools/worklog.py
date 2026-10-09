@@ -24,18 +24,29 @@ PHASES = [
 
 def main():
     now = datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="microseconds")
-    data = json.loads(PATH.read_text(encoding="utf-8")) if PATH.exists() else {
-        "actor": "AI-assisted execution, not personal student effort",
-        "recording_started": now,
-        "plan": [{"phase": key, "name": name, "estimate_minutes": estimate}
-                 for key, name, estimate in PHASES],
-        "sessions": [],
-    }
-    if data["sessions"] and "ended_at" not in data["sessions"][-1]:
+    data = (
+        json.loads(PATH.read_text(encoding="utf-8"))
+        if PATH.exists()
+        else {
+            "actor": "AI-assisted execution, not personal student effort",
+            "recording_started": now,
+            "plan": [
+                {"phase": key, "name": name, "estimate_minutes": estimate}
+                for key, name, estimate in PHASES
+            ],
+            "sessions": [],
+        }
+    )
+    if (
+        data["sessions"]
+        and "ended_at" not in data["sessions"][-1]
+        and data["sessions"][-1].get("status") != "interrupted_unmeasured"
+    ):
         session = data["sessions"][-1]
         session["ended_at"] = now
-        session["seconds"] = (datetime.fromisoformat(now)
-                              - datetime.fromisoformat(session["started_at"])).total_seconds()
+        session["seconds"] = (
+            datetime.fromisoformat(now) - datetime.fromisoformat(session["started_at"])
+        ).total_seconds()
     phase = sys.argv[1]
     if phase != "stop":
         if phase not in {key for key, _, _ in PHASES}:
