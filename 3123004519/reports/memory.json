@@ -1,0 +1,7 @@
+{
+  "tool": "/usr/bin/time -l",
+  "scope": "full Python CLI process, official del pair",
+  "maximum_resident_bytes": 14172160,
+  "maximum_resident_mib": 13.515625,
+  "answer": "0.90"
+}

@@ -1,0 +1,11 @@
+{
+  "production_lines": 213,
+  "files": {
+    "3123004519/main.py": 29,
+    "3123004519/papercheck/__init__.py": 1,
+    "3123004519/papercheck/errors.py": 25,
+    "3123004519/papercheck/service.py": 15,
+    "3123004519/papercheck/similarity.py": 39,
+    "3123004519/papercheck/text_io.py": 104
+  }
+}
