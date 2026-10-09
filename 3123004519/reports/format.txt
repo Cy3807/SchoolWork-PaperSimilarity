@@ -1,1 +1,17 @@
-14 files already formatted
+unformatted: File would be reformatted
+  --> 3123004519/docs/博客园草稿.md:74:1
+   |
+73 |
+74 +
+75 | def test_completely_different(self):
+   |
+
+unformatted: File would be reformatted
+  --> 3123004519/docs/博客正文.md:74:1
+   |
+73 |
+74 +
+75 | def test_completely_different(self):
+   |
+
+2 files would be reformatted, 16 files already formatted

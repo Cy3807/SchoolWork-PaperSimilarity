@@ -44,3 +44,12 @@ python 3123004519/tools/draw_reports.py
 若要复现课堂样例结果，请自行解压课堂提供的“测试文本.zip”，把六个文件直接放在 `3123004519/samples/official/`。该目录已忽略，公共仓库只保存文件校验值和运行结果，不包含小说全文。没有课堂样例也能运行全部单元测试和合成性能比较。
 
 本程序衡量字面相似度，不能识别所有同义改写，也不能替代人工判定。开发和文档使用 AI 辅助；PSP 记录注明实际执行口径。
+
+## 文章与结果
+
+- [博客正文](3123004519/docs/博客正文.md)、[博客园粘贴版](3123004519/docs/博客园草稿.md)
+- [测试记录](3123004519/reports/tests.txt)、[覆盖率](3123004519/reports/coverage.txt)
+- [性能原始数据](3123004519/reports/performance.json)、[完整进程内存](3123004519/reports/memory.json)
+- [GitHub Actions](https://github.com/Cy3807/SchoolWork-PaperSimilarity/actions)：Windows/Linux，Python 3.9/3.12
+
+辅助开发环境以 `requirements-dev.txt` 为准；`tools/memory_probe.py` 是 macOS 的补充内存测量工具。课堂样例不在公共仓库，校验值记录在 `reports/sample-manifest.json`。
