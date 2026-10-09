@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ruff_cache/
+.coverage*
+.DS_Store
+delivery/
+3123004519/reports/htmlcov/
+3123004519/reports/*.prof
+3123004519/reports/benchmark-input/

@@ -1,0 +1,14 @@
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+exclude = [".venv", "delivery"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.coverage.run]
+branch = true
+source = ["papercheck", "main"]
+
+[tool.coverage.report]
+show_missing = true
